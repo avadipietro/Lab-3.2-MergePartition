@@ -24,8 +24,8 @@ public class ArrayMethods2 {
 		else {
 			l = list1.length;
 		}
-		for (int z = 0; z < list1.length + list2.length; z++) {
-			if (list1[x].compareTo(list2[y]) < 0) {
+		for (int z = 0; z < list1.length + list2.length - 1; z++) {
+			if (list1[x].compareTo(list2[y]) <= 0) {
 				list3[z] = list1[x];
 				x++;
 			}
@@ -35,8 +35,7 @@ public class ArrayMethods2 {
 			}
 			System.out.println(list3[z]);
 		}
-		return list3;
-		
+		return list3;	
 	}
 	
 	public static int partition(int[] list) {
