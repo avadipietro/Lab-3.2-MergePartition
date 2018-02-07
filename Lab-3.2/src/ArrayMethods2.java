@@ -3,11 +3,11 @@ public class ArrayMethods2 {
 	
 	public static void main(String[] args) {
 		String[] list1 = {"aba", "ava", "dog", "egg", "shoe", "string", "zed"};
-		String[] list2 = {"banana", "computer", "hat", "saurabh", "train", "water", "zebra"};
+		String[] list2 = {"banana", "computer", "hat", "saurabh", "train", "vex", "water", "xyz", "yeah", "zebra"};
 		merge(list1, list2);
-		//for (String s : merge(list1, list2)) {
-			//System.out.print(s + " ");
-		//}
+		/*for (String s : merge(list1, list2)) {
+			System.out.print(s + " ");
+		}*/
 	}
 
 	public static String[] merge(String[] list1, String[] list2) {
@@ -24,13 +24,13 @@ public class ArrayMethods2 {
 		else {
 			l = list1.length;
 		}
-		for (int z = 0; z < l - 1; z++) {
-			if (list1[x].compareTo(list2[y]) <= 0) {
-				list3[x] = list1[x];
+		for (int z = 0; z < list1.length + list2.length; z++) {
+			if (list1[x].compareTo(list2[y]) < 0) {
+				list3[z] = list1[x];
 				x++;
 			}
 			else {
-				list3[x] = list2[y];
+				list3[z] = list2[y];
 				y++;
 			}
 			System.out.println(list3[z]);
@@ -52,6 +52,7 @@ public class ArrayMethods2 {
 				
 			}
 		}
+		return 0; //TEMP
 	}
 	
 }
