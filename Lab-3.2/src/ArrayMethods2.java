@@ -2,7 +2,7 @@
 public class ArrayMethods2 {
 	
 	public static void main(String[] args) {
-		String[] list1 = {"aba", "ava", "dog", "egg", "shoe", "string", "zed"};
+		String[] list1 = {"aba", "ava", "dog", "egg", "shoe", "string", "xa"};
 		String[] list2 = {"banana", "computer", "hat", "saurabh", "train", "vex", "water", "xyz", "yeah", "zebra"};
 		merge(list1, list2);
 		/*for (String s : merge(list1, list2)) {
@@ -24,12 +24,20 @@ public class ArrayMethods2 {
 		else {
 			l = list1.length;
 		}
-		for (int z = 0; z < list1.length + list2.length - 1; z++) {
+		for (int z = 0; z < list1.length + list2.length; z++) {
+			System.out.println("x = " + x);
+			System.out.println("y = " + y);
+			if (y < l && x < l) {
 			if (list1[x].compareTo(list2[y]) <= 0) {
 				list3[z] = list1[x];
 				x++;
 			}
 			else {
+				list3[z] = list2[y];
+				y++;
+			}
+			}
+			if (l == list1.length) { // list2 is bigger
 				list3[z] = list2[y];
 				y++;
 			}
