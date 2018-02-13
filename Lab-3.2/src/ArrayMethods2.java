@@ -5,8 +5,8 @@ public class ArrayMethods2 {
 		String[] list1 = {"aba", "ava", "dog", "egg", "shoe", "string", "xa"};
 		String[] list2 = {"banana", "computer", "hat", "saurabh", "train", "vex", "water", "xyz", "yeah", "zebra"};
 		int[] list3 = {2, 1, 7, 8, 6, 3, 5, 4};
-		//merge(list1, list2);
-		for (int i : partition(list3)) {
+		merge(list1, list2);
+		for (String i : merge(list1, list2)) {
 			System.out.print(i + " ");
 		}
 	}
@@ -25,24 +25,25 @@ public class ArrayMethods2 {
 		else {
 			l = list1.length;
 		}
-		for (int z = 0; z < list1.length + list2.length; z++) {
-			System.out.println("x = " + x);
-			System.out.println("y = " + y);
+		for (int z = 0; z < (list3.length); z++) {
 			if (y < l && x < l) {
-			if (list1[x].compareTo(list2[y]) <= 0) {
-				list3[z] = list1[x];
+				if (list1[x].compareTo(list2[y]) <= 0) {
+					list3[z] = list1[x];
+					x++;
+				}
+				else {
+					list3[z] = list2[y];
+					y++;
+				}
+			}
+			else if (l == list1.length) {
+				list3[z] = list2[x];
 				x++;
 			}
 			else {
-				list3[z] = list2[y];
-				y++;
+				list3[z] = list1[x];
+				x++;
 			}
-			}
-			if (l == list1.length) { // list2 is bigger
-				list3[z] = list2[y];
-				y++;
-			}
-			System.out.println(list3[z]);
 		}
 		return list3;	
 	}
