@@ -15,34 +15,27 @@ public class ArrayMethods2 {
 		/*	Pre-Condition: Both list1 and list2 contain Strings in alphabetical order from a to z.
 			Returns: An array of the two lists merged together. The result must be in alphabetical order.
 		*/
-		int l = 0;
 		int x = 0;
 		int y = 0;
+		int xcompy = 0;
 		String[] list3 = new String[list1.length + list2.length];
-		if (list1.length > list2.length) {
-			l = list2.length;
-		}
-		else {
-			l = list1.length;
-		}
-		for (int z = 0; z < (list3.length); z++) {
-			if (y < l && x < l) {
-				if (list1[x].compareTo(list2[y]) <= 0) {
-					list3[z] = list1[x];
-					x++;
-				}
-				else {
-					list3[z] = list2[y];
-					y++;
-				}
+		for (int z = 0; z < list3.length; z++) {
+			if (x >= list1.length) {
+				xcompy = 1;
 			}
-			else if (l == list1.length) {
-				list3[z] = list2[x];
+			else if (y >= list2.length) {
+				xcompy = -2;
+			}
+			else {
+				xcompy = list1[x].compareTo(list2[y]);
+			}
+			if (xcompy <= 0) {
+				list3[z] = list1[x];
 				x++;
 			}
 			else {
-				list3[z] = list1[x];
-				x++;
+				list3[z] = list2[y];
+				y++;
 			}
 		}
 		return list3;	
