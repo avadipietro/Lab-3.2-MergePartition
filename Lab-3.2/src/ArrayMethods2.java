@@ -57,8 +57,7 @@ public class ArrayMethods2 {
 	}
 	
 	public static int partition(int[] list) {
-		// Done with help from KC Ang's visual partition
-		
+		// Done with help from KC Ang's visual partition	
 		int i = 1;
 		int pivot = list[0];		
 		for (int j = 2; j < list.length; j++) {
