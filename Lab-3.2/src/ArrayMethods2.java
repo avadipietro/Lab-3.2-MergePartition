@@ -29,7 +29,9 @@ public class ArrayMethods2 {
 	}
 
 	public static String[] merge(String[] list1, String[] list2) {
-
+		/*	Pre-Condition: Both list1 and list2 contain Strings in alphabetical order from a to z.
+			Returns: An array of the two lists merged together. The result must be in alphabetical order.
+		*/
 		int x = 0;
 		int y = 0;
 		int xcompy = 0;
